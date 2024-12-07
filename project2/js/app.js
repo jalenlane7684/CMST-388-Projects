@@ -1,5 +1,5 @@
-const email_user = 'bub7584@gmail.com';
-const email_pass = 'fkst ghuq uywv txct';
+const email_user = 'bub7684@gmail.com';
+const email_pass = 'atew andf yhie wnnm';
 
 const express = require('express');
 const nodemailer = require('nodemailer');
@@ -7,19 +7,37 @@ const nodemailer = require('nodemailer');
 const app = express();
 const port = 3000;
 
+
 app.use(express.urlencoded({extended:true}));
 
 app.post('/submit-form', (req, res) => {
-  const { fname, lname, address, city, state, zip_code, phone_num, email, meal_pref/*, contact_methods*/ } = req.body;
+  const {
+    fname,
+    lname,
+    address,
+    city,
+    state,
+    zip_code,
+    phone_num_first_three,
+    phone_num_last_seven,
+    form_email,
+    form_email_conf,
+    meal_pref,
+    contact_method,
+    comments
+  }  = req.body;
 
-  const emailBody = `
-  Name: ${fname} ${lname}
-  Address: ${address}, ${city}, ${state} ${zip_code}
-  Phone: ${phone_num}
-  Email: ${email}
-  Meal Preference: ${meal_pref}
-  
-`;
+  console.log(req.body);
+
+  const emailBody = (`
+  Name: ${fname} ${lname}\n
+  Address: ${address}, ${city}, ${state} ${zip_code}\n
+  Phone: (${phone_num_first_three}) ${phone_num_last_seven}\n
+  Email: ${form_email_conf}\n
+  Meal Preference: ${meal_pref}\n
+  Contact Methods: ${contact_method.join(', ')}\n
+  Additional Commments:\n${comments}
+`);
 
 // Contact Methods: ${contact_methods.join(', ')}
 
@@ -35,7 +53,7 @@ app.post('/submit-form', (req, res) => {
   });
 
   const mailOptions = {
-    from: `${email}`,
+    from: `${form_email}`,
     to: email_user,
     subject: 'Form Submission',
     text: emailBody

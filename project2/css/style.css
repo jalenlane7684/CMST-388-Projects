@@ -8,6 +8,9 @@ body {
     align-items: center;
     flex-direction: column;
     padding-top: 200px;
+    box-sizing: border-box;
+    background-color: rgb(20, 20, 20);
+    color: white;
 }
 
 form {
@@ -89,4 +92,18 @@ input[type="radio"] {
 
 input[type="checkbox"] {
     width: 10%;
+}
+
+#comments-box {
+    height: 150px;
+    margin: 25px 0;
+    vertical-align: top;
+}
+
+#submit-button {
+    width: 20%;
+    height: 30px;
+    border-radius: 20px;
+    position: relative;
+    left: 40%;
 }
