@@ -10,23 +10,23 @@
     <h1>Email Submission Form</h1>
     <form id="myForm" method="POST" action="http://localhost:3000/submit-form">
         <div class="form-container">
-            <label for="fname">First Name:</label>
+            <label for="fname" id="fname">First Name:</label>
             <input type="text" name="fname" placeholder="Enter your first name..." required><br>
         </div>
         <div class="form-container">
-            <label for="lname">Last Name:</label>
+            <label for="lname" id="lname">Last Name:</label>
             <input type="text" name="lname" placeholder="Enter your last name..." required><br>
         </div>
         <div class="form-container">
-            <label for="address">Address:</label>
+            <label for="address" id="address">Address:</label>
             <input type="text" name="address" placeholder="Enter your address..." required><br>
         </div>
         <div class="form-container">
-            <label for="city">City:</label>
+            <label for="city" id="city">City:</label>
             <input type="text" name="city" placeholder="Enter your city..." required><br>
         </div>
         <div class="form-container">
-            <label for="state">State:</label>
+            <label for="state" id="state">State:</label>
             <select name="state" id="state-selector">
                 <option value="Alabama">Alabama</option>
                 <option value="Alaska">Alaska</option>
@@ -81,28 +81,28 @@
             </select>
         </div>
         <div class="form-container">
-            <label for="zip_code">Zip Code:</label>
+            <label for="zip_code" id="zip_code">Zip Code:</label>
             <input type="number" name="zip_code">
         </div>
         <div class="form-container">
-            <label for="phone_num">Phone Number:</label>
+            <label for="phone_num" id="phone_num">Phone Number:</label>
             <div class="phone-number">
-              <label for="phone_num_first_three">First Three Digits:</label>
+              <label for="phone_num_first_three" id="phone_num_first_three">First Three Digits:</label>
               <input type="number" id="first-three" name="phone_num_first_three" required>
-              <label for="phone_num_last_seven">Last Seven Digits:</label>
+              <label for="phone_num_last_seven" id="phone_num_last_seven">Last Seven Digits:</label>
               <input type="number" id="last-seven" name="phone_num_last_seven" required>
             </div>
         </div>
         <div class="form-container">
-            <label for="form_email">E-mail:</label>
+            <label for="form_email" id="form_email">E-mail:</label>
             <input type="email" name="form_email" placeholder="Type your email..." required>            
         </div>
         <div class="form-container">
-            <label for="form_email_conf">Confirm E-mail:</label>
+            <label for="form_email_conf" id="form_email_conf">Confirm E-mail:</label>
             <input type="email" name="form_email_conf" placeholder="Confirm your email..." required>            
         </div>
         <div class="form-container">
-            <label for="meal_pref">Meal Preference: <span class="parenthesis">(select one)</span></label>
+            <label for="meal_pref" id="meal_pref">Meal Preference: <span class="parenthesis">(select one)</span></label>
             <div class="meal-radio">
                 <div class="meal-option"><input type="radio" name="meal_pref" required value="Vegan"> Vegan</div>
                 <div class="meal-option"><input type="radio" name="meal_pref" required value="Vegetarian"> Vegetarian</div>
@@ -110,7 +110,7 @@
             </div>
         </div>
         <div class="form-container">
-            <label for="contact_method">Contact Method: <span class="parenthesis">(Select more than one)</span></label>
+            <label for="contact_method" id="contact_method">Contact Method: <span class="parenthesis">(Select more than one)</span></label>
             <div class="contact-check">
                 <div class="contact-option"><input type="checkbox" value="Phone" name="contact_method"> Phone</div>
                 <div class="contact-option"><input type="checkbox" value="Mail" name="contact_method"> Mail</div>
@@ -119,7 +119,7 @@
             </div>
         </div>
         <div class="form-container">
-            <label for="comments">Additional Comments:</label>
+            <label for="comments" id="comments">Additional Comments:</label>
             <input type="text" name="comments" id="comments-box">
         </div>
 
