@@ -87,10 +87,10 @@
         <div class="form-container">
             <label>Phone Number:</label>
             <div class="phone-number">
-              <label for="phone_num_first_three" id="phone_num_first_three">First Three Digits:</label>
-              <input type="number" id="first-three" name="phone_num_first_three" required>
+              <label for="phone_num_first_three">First Three Digits:</label>
+              <input type="number" id="phone_num_first_three" name="phone_num_first_three" required>
               <label for="phone_num_last_seven" id="phone_num_last_seven">Last Seven Digits:</label>
-              <input type="number" id="last-seven" name="phone_num_last_seven" required>
+              <input type="number" id="phone_num_last_seven" name="phone_num_last_seven" required>
             </div>
         </div>
         <div class="form-container">
@@ -102,25 +102,39 @@
             <input type="email" name="form_email_conf" id="form_email_conf" placeholder="Confirm your email..." required>            
         </div>
         <div class="form-container">
-            <label for="meal_pref">Meal Preference: <span class="parenthesis">(select one)</span></label>
+            <label for="meal_pref_vegan">Meal Preference: (select one)</label>
             <div class="meal-radio">
-                <div class="meal-option"><input type="radio" name="meal_pref" required value="Vegan"> Vegan</div>
-                <div class="meal-option"><input type="radio" name="meal_pref" required value="Vegetarian"> Vegetarian</div>
-                <div class="meal-option"><input type="radio" name="meal_pref" required value="Vegetarian"> Non-Vegetarian</div>
+                <div class="meal-option">
+                    <input type="radio" name="meal_pref" id="meal_pref_vegan" value="Vegan"> Vegan
+                </div>
+                <div class="meal-option">
+                    <input type="radio" name="meal_pref" id="meal_pref_vegetarian" value="Vegetarian"> Vegetarian
+                </div>
+                <div class="meal-option">
+                    <input type="radio" name="meal_pref" id="meal_pref_non_vegetarian" value="Non-Vegetarian"> Non-Vegetarian
+                </div>
             </div>
         </div>
         <div class="form-container">
-            <label for="contact_method" id="contact_method">Contact Method: <span class="parenthesis">(Select more than one)</span></label>
+            <label for="contact_method">Contact Method: <span class="parenthesis">(Select more than one)</span></label>
             <div class="contact-check">
-                <div class="contact-option"><input type="checkbox" value="Phone" name="contact_method"> Phone</div>
-                <div class="contact-option"><input type="checkbox" value="Mail" name="contact_method"> Mail</div>
-                <div class="contact-option"><input type="checkbox" value="Email" name="contact_method"> Email</div>
-                <div class="contact-option"><input type="checkbox" value="LinkedIn" name="contact_method"> LinkedIn</div>
+                <div class="contact-option">
+                    <input type="checkbox" name="contact_method" id="contact_method" value="Phone"> Phone
+                </div>
+                <div class="contact-option">
+                    <input type="checkbox" name="contact_method" value="Mail"> Mail
+                </div>
+                <div class="contact-option">
+                    <input type="checkbox" name="contact_method" value="Email"> Email
+                </div>
+                <div class="contact-option">
+                    <input type="checkbox" name="contact_method" value="LinkedIn"> LinkedIn
+                </div>
             </div>
         </div>
         <div class="form-container">
             <label for="comments">Additional Comments:</label>
-            <input type="text" name="comments" id="comments" id="comments-box">
+            <input type="text" name="comments" id="comments">
         </div>
 
         <div class="form-container" id="buttons">
