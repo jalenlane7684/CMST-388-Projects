@@ -34,13 +34,6 @@ label {
     align-items: center;
 }
 
-#submit-button {
-    text-align: center;
-    width: 50%;
-    margin: auto;
-
-}
-
 .phone-number {
     width: 50%;
     display: flex;
@@ -105,5 +98,17 @@ input[type="checkbox"] {
     height: 30px;
     border-radius: 20px;
     position: relative;
-    left: 40%;
+}
+
+#reset-button
+{
+    width: 20%;
+    height: 30px;
+    border-radius: 20px;
+    position: relative;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
 }
