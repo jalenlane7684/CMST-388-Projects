@@ -83,22 +83,26 @@ const completePurchase = () => {
 
 	if (name.value == "") {
 		nameError.textContent = "Please input a name.";
+		name.style.backgroundColor = "yellow";
 		validName = false;
 	} else {
 		nameError.textContent = "";
+		name.style.backgroundColor = "";
 		validName = true;
 	}
 	if (email.value == "" || (!(email.value.includes("@")) || !email.value.includes("."))) {
 		emailError.textContent = "Please input a valid email address! It must contain '@' and '.'";
+		email.style.backgroundColor = "yellow";
 		validEmail = false;
 	} else {
 		emailError.textContent = "";
+		email.style.backgroundColor = "";
 		validEmail = true;
 	}
 
 	if (validName && validEmail) {
 		clearInterval(timerId);
-		alert('Thank you for your purchase!');
+		alert(`Thank you for your purchase ${name.value}!`);
 		window.location.href = window.location.href;
 	}
 }
