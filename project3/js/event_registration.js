@@ -106,3 +106,5 @@ const completePurchase = () => {
 		window.location.href = window.location.href;
 	}
 }
+
+
