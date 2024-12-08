@@ -15,6 +15,14 @@ var ticketSurcharge = 0.50;
 /*** YOUR CODE STARTS BELOW HERE ***/
 const timer = document.getElementById('timer');
 const duration = new Date().getTime() + 600000;
+const contactInfo = document.getElementById('contactInformation');
+const resetButton = document.getElementById('reset');
+
+resetButton.addEventListener('click', () => {
+	contactInfo.style.display = "none";
+})
+
+
 
 const timerId = setInterval(() => {
 	const now = new Date().getTime();
@@ -47,16 +55,50 @@ const calculateTotal = () => {
 	let numOfTickets = parseInt(ticketsInput.value);
 	console.log(numOfTickets);
 	const errorMessage = document.getElementById('msgTickets');
+	const totalCost = document.getElementById('totalCost');
 
 	if (isNaN(numOfTickets) || numOfTickets > 3 || numOfTickets < 1) {
 		errorMessage.textContent = "The input is not a number between 1 and 3";
 		ticketsInput.style.backgroundColor = "yellow";
+		contactInfo.style.display = "none";
 	} else {
 		errorMessage.textContent = "";
 		ticketsInput.style.backgroundColor = "";
+		contactInfo.style.display = "block";
+		if (numOfTickets % 2 != 0) {
+			totalCost.value = "$" + (numOfTickets * costPerTicket + ticketSurcharge * numOfTickets) + "0";
+		} else {
+			totalCost.value = "$" + (numOfTickets * costPerTicket + ticketSurcharge * numOfTickets);
+		}
 	}
 }
 
 const completePurchase = () => {
+	const name = document.getElementById('name');
+	const email = document.getElementById('email');
+	const nameError = document.getElementById('msgname');
+	const emailError = document.getElementById('msgemail');
+	let validName = false;
+	let validEmail = false;
 
+	if (name.value == "") {
+		nameError.textContent = "Please input a name.";
+		validName = false;
+	} else {
+		nameError.textContent = "";
+		validName = true;
+	}
+	if (email.value == "" || (!(email.value.includes("@")) || !email.value.includes("."))) {
+		emailError.textContent = "Please input a valid email address! It must contain '@' and '.'";
+		validEmail = false;
+	} else {
+		emailError.textContent = "";
+		validEmail = true;
+	}
+
+	if (validName && validEmail) {
+		clearInterval(timerId);
+		alert('Thank you for your purchase!');
+		window.location.href = window.location.href;
+	}
 }
